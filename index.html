@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            border: chocolate;
+            height: 100%;
+            width: 100%;
+            box-shadow: coral 2px 2px 0px 0px ;
+        }
+        #input{
+            border: chocolate 1px 1px 1px 1px;
+            height: 30px;
+            box-shadow: coral 2px 2px 0px 0px;
+        }
+        #ans{
+            background-color: chocolate;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div align="center" class="container" >
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="input">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <button class="btn" id="clr" onclick="cleartext()">Clear</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn" id="block1" onclick="display(1)">1</button>
+                </td>
+                <td>
+                    <button class="btn" id="block2" onclick="display(2)">2</button>
+                </td>
+                <td>
+                    <button class="btn" id="block3" onclick="display(3)">3</button>
+                </td>
+                <td>
+                    <button class="btn" id="plus" onclick="display('+')">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn" id="block4" onclick="display(4)">4</button>
+                </td>
+                <td>
+                    <button class="btn" id="block5" onclick="display(5)">5</button>
+                </td>
+                <td>
+                    <button class="btn" id="block6" onclick="display(6)">6</button>
+                </td>
+                <td>
+                    <button class="btn" id="minus" onclick="display('-')">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn" id="block7" onclick="display(7)">7</button>
+                </td>
+                <td>
+                    <button class="btn" id="block8" onclick="display(8)">8</button>
+                </td>
+                <td>
+                    <button class="btn" id="block9" onclick="display(9)">9</button>
+                </td>
+                <td>
+                    <button class="btn" id="multiply" onclick="display('*')">*</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn" id="dot" onclick="display('.')">.</button>
+                </td>
+                <td>
+                    <button class="btn" id="block0" onclick="display(0)">0</button>
+                </td>
+                <td>
+                    <button class="btn" id="ans" onclick="calculate()">=</button>
+                </td>
+                <td>
+                    <button class="btn" id="divide" onclick="display('/')">/</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let input = document.getElementById("input");
+        input.value = 0;
+        let str = "";
+        function display(val) {
+            str = str + val;
+            input.value = str;
+        }
+        function calculate() {
+            let expression = input.value;
+            expression = eval(expression);
+            str = expression;
+            input.value = expression;
+        }
+        function cleartext() {
+            str = "";
+            input.value = 0;
+
+        }
+    </script>
+</body>
+
+</html>
